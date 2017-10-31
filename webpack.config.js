@@ -44,7 +44,9 @@ module.exports = {
                 loader: 'babel-loader',
                 query: {
                     //specify that we will be dealing with React code
-                    presets: ['react', 'env']
+                    presets: ['react', 'env', 'stage-2'],
+                    plugins: [require('babel-plugin-transform-object-rest-spread')]
+
                 }
             },
             {

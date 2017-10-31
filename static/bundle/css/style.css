@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);* {
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);@import url(https://fonts.googleapis.com/css?family=Julius+Sans+One);* {
   margin: 0;
   padding: 0; }
 
@@ -6,24 +6,121 @@ a {
   text-decoration: none;
   color: inherit; }
 
+.fade-appear {
+  opacity: 0;
+  z-index: 1;
+  background-color: #006FA9 !important;
+  transition: background-color 1000ms ease-in; }
+
+.fade-appear.fade-appear-active {
+  background-color: black !important;
+  opacity: 1; }
+
+.fade-exit {
+  opacity: 1; }
+
+.fade-exit.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 800ms ease-in; }
+
 a:focus {
   outline: none; }
+
+.intro-title img {
+  width: 20em; }
 
 html, body, #container, .home-container {
   height: 100%; }
 
-#container > div {
-  height: 100%; }
+.content-wrapper {
+  padding: 2em; }
 
-.header ul {
-  list-style-type: none; }
-  .header ul li {
-    display: inline-block; }
+html {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  overflow: hidden; }
+
+body {
+  height: 100%;
+  overflow: auto; }
+
+.header-container {
+  z-index: 99;
+  width: 100%;
+  color: white;
+  height: 8em;
+  position: relative; }
+
+.fixed-container {
+  position: fixed;
+  height: 5.5em; }
+
+.fixed {
+  position: fixed;
+  padding-top: 0.5em !important;
+  width: 100%; }
+
+.resume-container {
+  background-color: black;
+  color: white; }
+
+.home-container {
+  min-height: 100%;
+  background-color: #006FA9; }
+
+.portfolio-container {
+  background-color: white; }
+
+.header {
+  height: 8em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4em;
+  padding-top: 3em; }
+  .header ul {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-right: 2.5rem; }
+    .header ul li {
+      font-size: 18px;
+      font-weight: 300;
+      display: inline-block; }
+    .header ul li:after {
+      content: '';
+      display: block;
+      margin: auto;
+      height: 2px;
+      width: 0px;
+      background: transparent;
+      transition: width .5s ease, background-color .5s ease; }
+    .header ul li:hover:after {
+      width: 80%;
+      background: red; }
+  .header h1 {
+    font-family: 'Julius Sans One', sans-serif;
+    color: white;
+    font-size: 4rem;
+    margin-left: 3.5rem; }
+
+#container > div {
+  z-index: 1;
+  height: 100%; }
+  #container > div > div {
+    height: 100%; }
+    #container > div > div > div:last-child {
+      min-height: 100%;
+      z-index: 5; }
+
+.header-offset {
+  padding-top: 8.2em; }
 
 h1 {
   font-family: 'Lato', sans-serif;
-  color: black;
-  font-weight: 100; }
+  font-size: 30px;
+  font-weight: 300; }
 
 .home-container {
   display: flex;
